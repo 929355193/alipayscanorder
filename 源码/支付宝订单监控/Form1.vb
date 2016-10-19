@@ -18,8 +18,8 @@
         ' MsgBox("找不到以往的数据记录，准备生成新数据文件")
         ' IO.File.CreateText(Application.StartupPath + "\scan.txt")
         '  End If
+        System.Threading.Thread.Sleep(8000)
         WebBrowser1.Navigate("https://consumeprod.alipay.com/record/standard.htm")
-        System.Threading.Thread.Sleep(1500)
         Timer2.Enabled = True
     End Sub
 
@@ -30,7 +30,6 @@
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         '监控登录是否完毕
         Dim bbh As String = "20161019"
-        System.Threading.Thread.Sleep(5000)
         Dim newbbh As String = WebBrowser2.Document.Body.InnerHtml.ToString
         newbbh = Split(newbbh, "最新版本")(1)
         newbbh = Split(newbbh, "哈哈哈")(0)
