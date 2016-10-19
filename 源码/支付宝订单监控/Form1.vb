@@ -1,11 +1,17 @@
 ﻿Public Class Form1
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         '初始化提示
+        WebBrowser2.Navigate("https://github.com/929355193/alipayscanorder/")
         Timer1.Enabled = False
+        System.Threading.Thread.Sleep(1500)
         MsgBox("请务必使用扫码登录")
+        System.Threading.Thread.Sleep(1500)
         MsgBox("低端电脑卡死正常,显示分辨率最低要求1200*650")
+        System.Threading.Thread.Sleep(1500)
         MsgBox("安全问题自行承担")
+        System.Threading.Thread.Sleep(1500)
         MsgBox("本程序注重结果，过程的代码没有优化")
+        System.Threading.Thread.Sleep(1500)
         'If My.Computer.FileSystem.FileExists(Application.StartupPath + "\scan.txt") Then
         ' TextBox1.Text = IO.File.ReadAllText(Application.StartupPath + "\scan.txt")
         '  Else
@@ -13,6 +19,7 @@
         ' IO.File.CreateText(Application.StartupPath + "\scan.txt")
         '  End If
         WebBrowser1.Navigate("https://consumeprod.alipay.com/record/standard.htm")
+        System.Threading.Thread.Sleep(1500)
         Timer2.Enabled = True
     End Sub
 
@@ -22,7 +29,17 @@
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         '监控登录是否完毕
-        Dim bbh As String = "20161018"
+        Dim bbh As String = "20161019"
+        System.Threading.Thread.Sleep(5000)
+        Dim newbbh As String = WebBrowser2.Document.Body.InnerHtml.ToString
+        newbbh = Split(newbbh, "最新版本")(1)
+        newbbh = Split(newbbh, "哈哈哈")(0)
+        newbbh = Trim(newbbh)
+        If Not bbh = newbbh Then
+            Timer2.Enabled = False
+            MsgBox("版本号错误，请更新")
+            End
+        End If
         Timer2.Enabled = False
         System.Threading.Thread.Sleep(500)
         Dim goodurl As String = "https://consumeprod.alipay.com/record/standard.htm"
