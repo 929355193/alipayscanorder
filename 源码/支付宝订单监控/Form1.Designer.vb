@@ -123,7 +123,7 @@ Partial Class Form1
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(195, 21)
         Me.TextBox2.TabIndex = 6
-        Me.TextBox2.Text = "http://www.666.com/cs.php"
+        Me.TextBox2.Text = "http://www.666.com/pcjk.php"
         '
         'TextBox3
         '

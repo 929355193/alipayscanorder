@@ -6,12 +6,12 @@
         MsgBox("低端电脑卡死正常,显示分辨率最低要求1200*650")
         MsgBox("安全问题自行承担")
         MsgBox("本程序注重结果，过程的代码没有优化")
-        If My.Computer.FileSystem.FileExists(Application.StartupPath + "\scan.txt") Then
-            TextBox1.Text = IO.File.ReadAllText(Application.StartupPath + "\scan.txt")
-        Else
-            MsgBox("找不到以往的数据记录，准备生成新数据文件")
-            IO.File.CreateText(Application.StartupPath + "\scan.txt")
-        End If
+        'If My.Computer.FileSystem.FileExists(Application.StartupPath + "\scan.txt") Then
+        ' TextBox1.Text = IO.File.ReadAllText(Application.StartupPath + "\scan.txt")
+        '  Else
+        ' MsgBox("找不到以往的数据记录，准备生成新数据文件")
+        ' IO.File.CreateText(Application.StartupPath + "\scan.txt")
+        '  End If
         WebBrowser1.Navigate("https://consumeprod.alipay.com/record/standard.htm")
         Timer2.Enabled = True
     End Sub
