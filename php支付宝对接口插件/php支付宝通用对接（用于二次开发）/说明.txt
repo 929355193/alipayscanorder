@@ -1,0 +1,6 @@
+1：全部必须777权限
+2：必须同级目录
+3：必须有bad.txt+scan.txt，不然判断全部有充值
+4：安全问题自己判断
+PS:bad.txt是已经使用过的订单；scan.txt是软件扫描立马上传上去的订单;fukuan.php是付款界面；pcjk.php是接口文件，和pc扫描对接，可以自行修改接口的参数，保证安全。$****** = $_GET['******'];
+file_put_contents('scan.txt',$******, FILE_APPEND);，其中******就是接口参数
