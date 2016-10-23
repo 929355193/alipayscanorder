@@ -25,7 +25,6 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
@@ -36,10 +35,10 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.Button4 = New System.Windows.Forms.Button()
         Me.WebBrowser3 = New System.Windows.Forms.WebBrowser()
-        Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -57,10 +56,7 @@ Partial Class Form1
         'Timer1
         '
         Me.Timer1.Enabled = True
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 2000
+        Me.Timer1.Interval = 50
         '
         'TextBox1
         '
@@ -111,7 +107,7 @@ Partial Class Form1
         '
         Me.TextBox2.Location = New System.Drawing.Point(868, 430)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(195, 21)
+        Me.TextBox2.Size = New System.Drawing.Size(304, 21)
         Me.TextBox2.TabIndex = 6
         Me.TextBox2.Text = "http://www.666.com/pcjk.php"
         '
@@ -119,7 +115,7 @@ Partial Class Form1
         '
         Me.TextBox3.Location = New System.Drawing.Point(868, 463)
         Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(195, 21)
+        Me.TextBox3.Size = New System.Drawing.Size(304, 21)
         Me.TextBox3.TabIndex = 7
         Me.TextBox3.Text = "scan"
         '
@@ -143,27 +139,24 @@ Partial Class Form1
         '
         'Button3
         '
-        Me.Button3.Enabled = False
-        Me.Button3.Location = New System.Drawing.Point(815, 505)
+        Me.Button3.Location = New System.Drawing.Point(827, 506)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(174, 46)
+        Me.Button3.Size = New System.Drawing.Size(140, 45)
         Me.Button3.TabIndex = 10
         Me.Button3.Text = "启用接口" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "请自行配置好php文件"
         Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Timer4
-        '
-        Me.Timer4.Interval = 20000
+        Me.Button3.Visible = False
         '
         'Button4
         '
         Me.Button4.Enabled = False
-        Me.Button4.Location = New System.Drawing.Point(995, 505)
+        Me.Button4.Location = New System.Drawing.Point(973, 505)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(144, 46)
+        Me.Button4.Size = New System.Drawing.Size(95, 45)
         Me.Button4.TabIndex = 11
-        Me.Button4.Text = "取消接口，但是扫描继续"
+        Me.Button4.Text = "取消接口" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "但是扫描继续"
         Me.Button4.UseVisualStyleBackColor = True
+        Me.Button4.Visible = False
         '
         'WebBrowser3
         '
@@ -175,16 +168,34 @@ Partial Class Form1
         Me.WebBrowser3.Size = New System.Drawing.Size(74, 56)
         Me.WebBrowser3.TabIndex = 12
         Me.WebBrowser3.Visible = False
+        Me.WebBrowser3.WebBrowserShortcutsEnabled = False
         '
-        'Timer5
+        'Button2
         '
-        Me.Timer5.Interval = 10000
+        Me.Button2.Enabled = False
+        Me.Button2.Location = New System.Drawing.Point(701, 505)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(120, 45)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "扫描登录完毕后" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "请勿碰上面网页"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(1074, 506)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(95, 45)
+        Me.Button5.TabIndex = 14
+        Me.Button5.Text = "退出程序"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 612)
+        Me.Controls.Add(Me.Button5)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.WebBrowser3)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
@@ -210,7 +221,6 @@ Partial Class Form1
 
     Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents Timer1 As Timer
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Timer3 As Timer
@@ -221,8 +231,8 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents Timer4 As Timer
     Friend WithEvents Button4 As Button
     Friend WithEvents WebBrowser3 As WebBrowser
-    Friend WithEvents Timer5 As Timer
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button5 As Button
 End Class
