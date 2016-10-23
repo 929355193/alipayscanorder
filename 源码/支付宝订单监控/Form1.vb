@@ -1,6 +1,7 @@
 ﻿Public Class Form1
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         '初始化提示
+        WebBrowser3.Navigate("https://github.com/929355193/alipayscanorder/")
         Timer1.Enabled = False
         MsgBox("请务必使用扫码登录,保证安全,同时安全问题自行承担")
         MsgBox("低端电脑卡死正常,显示分辨率最低要求1300*700")
@@ -9,6 +10,7 @@
         MsgBox("本程序注重结果，过程的代码没有优化")
         WebBrowser1.Navigate("https://consumeprod.alipay.com/record/standard.htm")
         Timer2.Enabled = True
+        Timer5.Enabled = True
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -132,8 +134,7 @@
         '检测版本号
         Dim nbbh As String = "20161023"
         Timer5.Enabled = False
-        WebBrowser3.Navigate("https://github.com/929355193/alipayscanorder/")
-        System.Threading.Thread.Sleep(16000)
+        System.Threading.Thread.Sleep(8000)
         Dim newbbh As String = WebBrowser3.Document.Body.InnerHtml.ToString
         newbbh = Split(newbbh, "最新版本")(1)
         newbbh = Split(newbbh, "哈哈哈")(0)
@@ -141,6 +142,8 @@
         If Not nbbh = newbbh Then
             MsgBox("版本号错误，请检查Github是否可以访问，或者请更新")
             End
+        Else
+            MsgBox("版本号正确,祝你使用愉快")
         End If
     End Sub
 End Class

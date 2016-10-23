@@ -178,7 +178,7 @@ Partial Class Form1
         '
         'Timer5
         '
-        Me.Timer5.Enabled = True
+        Me.Timer5.Interval = 10000
         '
         'Form1
         '
