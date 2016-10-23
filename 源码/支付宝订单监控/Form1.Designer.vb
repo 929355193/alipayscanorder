@@ -24,7 +24,6 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
@@ -52,11 +51,6 @@ Partial Class Form1
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
         Me.WebBrowser1.WebBrowserShortcutsEnabled = False
-        '
-        'Timer1
-        '
-        Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 50
         '
         'TextBox1
         '
@@ -220,7 +214,6 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents WebBrowser1 As WebBrowser
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Button1 As Button
     Friend WithEvents Timer3 As Timer

@@ -1,8 +1,8 @@
 ﻿Public Class Form1
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         '初始化提示
         WebBrowser3.Navigate("https://github.com/929355193/alipayscanorder/")
-        Timer1.Enabled = False
         MsgBox("请务必使用扫码登录,保证安全,同时安全问题自行承担")
         MsgBox("低端电脑卡死正常,显示分辨率最低要求1300*700")
         MsgBox("网络必须要能访问Github，否则程序会错误")
@@ -18,17 +18,13 @@
         newbbh = Trim(newbbh)
         If Not nbbh = newbbh Then
             MsgBox("版本号错误，请检查Github是否可以访问，或者请更新")
+            Process.Start("https://github.com/929355193/alipayscanorder")
             End
         Else
             MsgBox("版本号正确,祝你使用愉快")
             Button2.Enabled = True
         End If
         WebBrowser1.Navigate("https://consumeprod.alipay.com/record/standard.htm")
-
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
