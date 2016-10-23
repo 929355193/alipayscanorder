@@ -1,24 +1,12 @@
 ﻿Public Class Form1
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         '初始化提示
-        WebBrowser2.Navigate("https://github.com/929355193/alipayscanorder/")
         Timer1.Enabled = False
-        System.Threading.Thread.Sleep(1500)
-        MsgBox("请务必使用扫码登录")
-        System.Threading.Thread.Sleep(1500)
-        MsgBox("低端电脑卡死正常,显示分辨率最低要求1200*650")
-        System.Threading.Thread.Sleep(1500)
-        MsgBox("安全问题自行承担")
-        System.Threading.Thread.Sleep(1500)
+        MsgBox("请务必使用扫码登录,保证安全,同时安全问题自行承担")
+        MsgBox("低端电脑卡死正常,显示分辨率最低要求1300*700")
+        MsgBox("网络必须要能访问Github，否则程序会错误")
+        MsgBox("程序错误的时候，可以再开一次嘛")
         MsgBox("本程序注重结果，过程的代码没有优化")
-        System.Threading.Thread.Sleep(1500)
-        'If My.Computer.FileSystem.FileExists(Application.StartupPath + "\scan.txt") Then
-        ' TextBox1.Text = IO.File.ReadAllText(Application.StartupPath + "\scan.txt")
-        '  Else
-        ' MsgBox("找不到以往的数据记录，准备生成新数据文件")
-        ' IO.File.CreateText(Application.StartupPath + "\scan.txt")
-        '  End If
-        System.Threading.Thread.Sleep(8000)
         WebBrowser1.Navigate("https://consumeprod.alipay.com/record/standard.htm")
         Timer2.Enabled = True
     End Sub
@@ -29,18 +17,9 @@
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         '监控登录是否完毕
-        Dim bbh As String = "20161019"
-        Dim newbbh As String = WebBrowser2.Document.Body.InnerHtml.ToString
-        newbbh = Split(newbbh, "最新版本")(1)
-        newbbh = Split(newbbh, "哈哈哈")(0)
-        newbbh = Trim(newbbh)
-        If Not bbh = newbbh Then
-            Timer2.Enabled = False
-            MsgBox("版本号错误，请更新")
-            End
-        End If
+        Dim bbh As String = "20161023"
         Timer2.Enabled = False
-        System.Threading.Thread.Sleep(500)
+        System.Threading.Thread.Sleep(10000)
         Dim goodurl As String = "https://consumeprod.alipay.com/record/standard.htm"
         Dim nowurl As String = WebBrowser1.Url.ToString
         If goodurl = nowurl Then
@@ -118,7 +97,6 @@
             html001 = Replace(html001, jl, "---ok---")
             System.Threading.Thread.Sleep(500)
         Next
-        'My.Computer.FileSystem.WriteAllText(Application.StartupPath + "\scan.txt", TextBox1.Text, False, System.Text.Encoding.Default)
         WebBrowser1.Refresh()
         System.Threading.Thread.Sleep(3000)
         Timer3.Enabled = True
@@ -128,7 +106,7 @@
         Process.Start("https://github.com/929355193/alipayscanorder")
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         'Process.Start(Application.StartupPath + "\scan.txt")
     End Sub
 
@@ -148,5 +126,21 @@
         Button3.Enabled = True
         Button4.Enabled = False
         Timer4.Enabled = False
+    End Sub
+
+    Private Sub Timer5_Tick(sender As Object, e As EventArgs) Handles Timer5.Tick
+        '检测版本号
+        Dim nbbh As String = "20161023"
+        Timer5.Enabled = False
+        WebBrowser3.Navigate("https://github.com/929355193/alipayscanorder/")
+        System.Threading.Thread.Sleep(16000)
+        Dim newbbh As String = WebBrowser3.Document.Body.InnerHtml.ToString
+        newbbh = Split(newbbh, "最新版本")(1)
+        newbbh = Split(newbbh, "哈哈哈")(0)
+        newbbh = Trim(newbbh)
+        If Not nbbh = newbbh Then
+            MsgBox("版本号错误，请检查Github是否可以访问，或者请更新")
+            End
+        End If
     End Sub
 End Class

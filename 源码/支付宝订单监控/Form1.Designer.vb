@@ -30,7 +30,6 @@ Partial Class Form1
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
         Me.WebBrowser2 = New System.Windows.Forms.WebBrowser()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -39,6 +38,8 @@ Partial Class Form1
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.WebBrowser3 = New System.Windows.Forms.WebBrowser()
+        Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -56,11 +57,10 @@ Partial Class Form1
         'Timer1
         '
         Me.Timer1.Enabled = True
-        Me.Timer1.Interval = 1000
         '
         'Timer2
         '
-        Me.Timer2.Interval = 1500
+        Me.Timer2.Interval = 2000
         '
         'TextBox1
         '
@@ -95,16 +95,6 @@ Partial Class Form1
         Me.Label1.Size = New System.Drawing.Size(293, 24)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "本项目程序开源Github地址(欢迎各位指点和二次开发)" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "https://github.com/929355193/alipayscanorder"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(446, 449)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(277, 80)
-        Me.Button2.TabIndex = 4
-        Me.Button2.Text = "订单号和金额这些数据都在该" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "程序目录下的scan.txt里面，建议一天清理一次" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "，请自行按个人喜好制作php接口" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(点击打开预览)"
-        Me.Button2.UseVisualStyleBackColor = True
-        Me.Button2.Visible = False
         '
         'WebBrowser2
         '
@@ -163,7 +153,7 @@ Partial Class Form1
         '
         'Timer4
         '
-        Me.Timer4.Interval = 15000
+        Me.Timer4.Interval = 20000
         '
         'Button4
         '
@@ -175,11 +165,27 @@ Partial Class Form1
         Me.Button4.Text = "取消接口，但是扫描继续"
         Me.Button4.UseVisualStyleBackColor = True
         '
+        'WebBrowser3
+        '
+        Me.WebBrowser3.Location = New System.Drawing.Point(1098, 430)
+        Me.WebBrowser3.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.WebBrowser3.Name = "WebBrowser3"
+        Me.WebBrowser3.ScriptErrorsSuppressed = True
+        Me.WebBrowser3.ScrollBarsEnabled = False
+        Me.WebBrowser3.Size = New System.Drawing.Size(74, 56)
+        Me.WebBrowser3.TabIndex = 12
+        Me.WebBrowser3.Visible = False
+        '
+        'Timer5
+        '
+        Me.Timer5.Enabled = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 612)
+        Me.Controls.Add(Me.WebBrowser3)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
@@ -187,7 +193,6 @@ Partial Class Form1
         Me.Controls.Add(Me.TextBox3)
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.WebBrowser2)
-        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
@@ -210,7 +215,6 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents Timer3 As Timer
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
     Friend WithEvents WebBrowser2 As WebBrowser
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox3 As TextBox
@@ -219,4 +223,6 @@ Partial Class Form1
     Friend WithEvents Button3 As Button
     Friend WithEvents Timer4 As Timer
     Friend WithEvents Button4 As Button
+    Friend WithEvents WebBrowser3 As WebBrowser
+    Friend WithEvents Timer5 As Timer
 End Class
