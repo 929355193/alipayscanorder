@@ -1,15 +1,24 @@
-0：yuer.php为显示余额，放在/includes/hooks/里面
-1：剩余文件全部必须777权限，可以放在whmcs根目录
-2：必须同级目录
+whmcs对接余额使用方法：
+文件结构：
+bad.txt----这个是订单已经充值过的记录，请务必保持777权限，否则一个订单号会无限次重复充值成功！
+fukuan.php----这个是付款和充值的主页面，请务必保持777权限！
+pcjk.php----这个是对接文件，就是在exe程序里填写的地址，请务必保持777权限！
+scan.txt----这个是exe上传的所有订单号，请务必保持777权限！
+shoukuan.jpg----这个是你支付宝收款的图片，请自己替换，也随便加个777权限吧。
+yuer.php----这个是whmcs余额的钩子，有些主题左侧没有显示余额，就需要这个，不需要777权限。
+
+-*-*-*-*-*-*-*-*-*-*-*-*-
+文件存放位置：
+1：yuer.php放在whmcs目录里面的【/includes/hooks/】里面
+2：【bad.txt+fukuan.php+pcjk.php+scan.txt+shoukuan.jpg】必须777权限，然后可以在whmcs目录里面建立一个alipay的文件夹（文件夹需要777权限），
+然后放在里面，变成whmcs目录\alipay\*.*,这样到时候就能通过【你whmcs网址/alipay/fukuan.php】进行充值。
 3：必须有bad.txt+scan.txt，不然判断全部有充值
-4：安全问题自己判断
-5:fukuan.php中请自己修改whmcs的数据库
+4:fukuan.php中请自己修改whmcs的数据库
 $mysqlip="localhost";
 $mysqluser="bb";
 $mysqlpassword="123456";
 $mysqldatabase="bb";
-
-
-
-PS:bad.txt是已经使用过的订单；scan.txt是软件扫描立马上传上去的订单;fukuan.php是付款界面；pcjk.php是接口文件，和pc扫描对接，可以自行修改接口的参数，保证安全。$****** = $_GET['******'];
-file_put_contents('scan.txt',$******, FILE_APPEND);，其中******就是接口参数
+5：pcjk.php是接口文件，可以自行修改接口的参数，保证安全。
+$****** = $_GET['******'];
+file_put_contents('scan.txt',$******, FILE_APPEND);
+，其中3个******就是接口参数
