@@ -38,6 +38,8 @@ Partial Class Form1
         Me.WebBrowser3 = New System.Windows.Forms.WebBrowser()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'WebBrowser1
@@ -171,7 +173,7 @@ Partial Class Form1
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(120, 45)
         Me.Button2.TabIndex = 13
-        Me.Button2.Text = "扫描登录完毕后" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "请勿碰上面网页"
+        Me.Button2.Text = "开始扫描"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button5
@@ -183,11 +185,32 @@ Partial Class Form1
         Me.Button5.Text = "退出程序"
         Me.Button5.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(1050, 596)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(107, 12)
+        Me.Label4.TabIndex = 15
+        Me.Label4.Text = "当前版本号:获取中"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("宋体", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
+        Me.Label5.Location = New System.Drawing.Point(704, 569)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(213, 24)
+        Me.Label5.TabIndex = 16
+        Me.Label5.Text = "请扫描登录完毕后不要乱点网页" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "然后点击““开始扫描””按钮开始监控"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1184, 612)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.WebBrowser3)
@@ -228,4 +251,6 @@ Partial Class Form1
     Friend WithEvents WebBrowser3 As WebBrowser
     Friend WithEvents Button2 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
 End Class

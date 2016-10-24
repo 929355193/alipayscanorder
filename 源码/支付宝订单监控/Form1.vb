@@ -7,17 +7,18 @@
         MsgBox("低端电脑卡死正常,显示分辨率最低要求1300*700")
         MsgBox("网络必须要能访问Github，否则程序会错误")
         MsgBox("程序错误的时候，可以再开一次嘛")
-        MsgBox("本程序注重结果，过程的代码没有优化")
+        MsgBox("本程序为开源项目，要获取全部代码请上Github")
         System.Threading.Thread.Sleep(1500)
         MsgBox("检查版本中，请稍候...")
         System.Threading.Thread.Sleep(5000)
-        Dim nbbh As String = "20161023"
+        Dim nbbh As String = "20161024"
+        Label4.Text = "当前版本号:" + nbbh
         Dim newbbh As String = WebBrowser3.Document.Body.InnerHtml.ToString
         newbbh = Split(newbbh, "最新版本")(1)
         newbbh = Split(newbbh, "哈哈哈")(0)
         newbbh = Trim(newbbh)
         If Not nbbh = newbbh Then
-            MsgBox("版本号错误，请检查Github是否可以访问，或者请更新")
+            MsgBox("版本号错误，请检查Github是否可以访问，或者请进入Github查看README.md进行更新")
             Process.Start("https://github.com/929355193/alipayscanorder")
             End
         Else
@@ -34,6 +35,7 @@
     Private Sub Timer3_Tick(sender As Object, e As EventArgs) Handles Timer3.Tick
         '核心区域
         Timer3.Enabled = False
+        Label5.Text = "扫描中...假死正常，稍安勿躁"
         Dim goodurl1 As String = "https://consumeprod.alipay.com/record/standard.htm"
         Dim nowurl1 As String = WebBrowser1.Url.ToString
         If Not goodurl1 = nowurl1 Then
@@ -83,6 +85,7 @@
         End If
         System.Threading.Thread.Sleep(5000)
         Timer3.Enabled = True
+        Label5.Text = "等待扫描中..."
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
@@ -109,7 +112,6 @@
         '登录完毕
         Button2.Enabled = False
         MsgBox("没有登录会出错的哦!")
-        Dim bbh As String = "20161023"
         Dim goodurl As String = "https://consumeprod.alipay.com/record/standard.htm"
         Dim nowurl As String = WebBrowser1.Url.ToString
         If goodurl = nowurl Then
@@ -127,7 +129,7 @@
             zfbid = Trim(zfbid)
             zfbid = Replace(zfbid, "'", "")
             zfbid = Replace(zfbid, ",", "")
-            Me.Text = Me.Text + " | 版本：" + bbh + ">>>(" + zfbuser + zfbid + ")<<<"
+            Me.Text = Me.Text + ">>>(" + zfbuser + zfbid + ")<<<"
             System.Threading.Thread.Sleep(500)
             Timer3.Enabled = True
             Button3.Visible = True
